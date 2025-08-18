@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Website</title>
+  <meta name="description" content="A modern, interactive portfolio template using Bootstrap">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#main-nav" data-bs-root-margin="-35% 0px -55%">
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <header class="navbar navbar-expand-lg sticky-top glassy-nav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home" aria-label="Home">
+        <span class="logo me-2" aria-hidden="true">MM</span>
+        <span class="brand-name">Muaz</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-links" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="collapse navbar-collapse" id="nav-links">
+        <div class="navbar-nav ms-auto align-items-lg-center">
+          <a class="nav-link active" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#contact">Contact</a>
+          <button id="theme-toggle" class="btn theme-toggle ms-lg-2 mt-2 mt-lg-0" aria-label="Toggle theme" title="Toggle light/dark">🌙</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="section home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 reveal" style="--d:.0s">
+            <h1 class="hero-title">
+              Hi, I'm <span class="gradient">Muaz Muhammad</span><br>
+              I build clean, modern web experiences.
+            </h1>
+            <p class="lead text-body-secondary">Frontend developer focused on performance, accessibility, and delightful UX.</p>
+            <div class="cta mt-4">
+              <a href="#projects" class="btn btn-primary me-2">See Projects</a>
+              <a href="#contact" class="btn btn-outline-info">Hire Me</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <aside class="card hero-card reveal" style="--d:.1s" aria-label="Profile summary">
+              <div class="card-body">
+                <div class="avatar mb-2" aria-hidden="true">MM</div>
+                <p>JavaScript • UI/UX • Accessibility • Animations</p>
+                <div class="pills">
+                  <span class="badge">HTML</span>
+                  <span class="badge">CSS</span>
+                  <span class="badge">JS</span>
+                  <span class="badge">Performance</span>
+                  <span class="badge">Design Systems</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <div class="bg-blob" aria-hidden="true"></div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">About</h2>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <article class="card h-100 reveal" style="--d:.05s">
+              <div class="card-body">
+                <h3 class="card-title">Background</h3>
+                <p>I craft accessible, fast websites and interfaces. I enjoy turning complex problems into simple, beautiful solutions.</p>
+                <ul class="checklist">
+                  <li>Semantic HTML & WCAG awareness</li>
+                  <li>Reusable components & design tokens</li>
+                  <li>Performance-first mindset</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="card h-100 reveal" style="--d:.1s">
+              <div class="card-body">
+                <h3 class="card-title">Highlights</h3>
+                <p>From landing pages to dashboards, I bring clarity, polish, and a human touch.</p>
+                <div class="tags">
+                  <span class="tag">Animations</span>
+                  <span class="tag">Accessibility</span>
+                  <span class="tag">Design Systems</span>
+                  <span class="tag">Dev Tools</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+        <div class="filters reveal nav nav-pills mb-4" role="tablist" aria-label="Project filters">
+          <button class="chip nav-link active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip nav-link" data-filter="web" role="tab">Web</button>
+          <button class="chip nav-link" data-filter="ui" role="tab">UI</button>
+          <button class="chip nav-link" data-filter="tools" role="tab">Tools</button>
+        </div>
+        <div class="row g-4" id="project-cards">
+          <div class="col-md-6 col-lg-4 project" data-category="web" data-title="Startup Landing" data-desc="Hero, pricing, and signup form with smooth animations." data-demo="https://example.com/demo1" data-code="https://example.com/code1">
+            <article class="card h-100">
+              <div class="thumb" aria-hidden="true"></div>
+              <div class="card-body">
+                <h3 class="card-title fs-5">Startup Landing</h3>
+                <p class="card-text">Responsive landing page with sticky nav and sections.</p>
+                <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+              </div>
+              <div class="card-footer actions">
+                <button class="btn btn-sm btn-primary preview-btn">Preview</button>
+                <a class="btn btn-sm btn-outline-info" href="https://example.com/demo1" target="_blank" rel="noreferrer">Live</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 project" data-category="ui" data-title="UI Component Kit" data-desc="Buttons, inputs, modals, and toasts as reusable components." data-demo="https://example.com/demo2" data-code="https://example.com/code2">
+            <article class="card h-100">
+              <div class="thumb" aria-hidden="true"></div>
+              <div class="card-body">
+                <h3 class="card-title fs-5">UI Component Kit</h3>
+                <p class="card-text">Design tokens + components with clear docs.</p>
+                <div class="tags"><span class="tag">Design</span><span class="tag">Docs</span></div>
+              </div>
+              <div class="card-footer actions">
+                <button class="btn btn-sm btn-primary preview-btn">Preview</button>
+                <a class="btn btn-sm btn-outline-info" href="https://example.com/demo2" target="_blank" rel="noreferrer">Live</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 project" data-category="tools" data-title="Dev Tools" data-desc="CLI that scaffolds pages and components." data-demo="" data-code="https://example.com/code3">
+            <article class="card h-100">
+              <div class="thumb" aria-hidden="true"></div>
+              <div class="card-body">
+                <h3 class="card-title fs-5">Dev Tools</h3>
+                <p class="card-text">Productivity toolbox for faster projects.</p>
+                <div class="tags"><span class="tag">Node</span><span class="tag">Automation</span></div>
+              </div>
+              <div class="card-footer actions">
+                <button class="btn btn-sm btn-primary preview-btn">Preview</button>
+                <a class="btn btn-sm btn-outline-info" href="https://example.com/code3" target="_blank" rel="noreferrer">Code</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-8">
+            <h2 class="section-title reveal">Contact</h2>
+            <form id="contact-form" novalidate>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input id="name" name="name" type="text" class="form-control" placeholder="Your full name" required>
+                <div class="form-text">Required. Min 2 characters.</div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" type="email" class="form-control" placeholder="you@example.com" required>
+                <div class="form-text">We'll use this to reply.</div>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" rows="5" class="form-control" placeholder="Tell me about your project..." required></textarea>
+                <div class="form-text">Required. Min 10 characters.</div>
+              </div>
+              <div class="hp" aria-hidden="true">
+                <label for="website">Website</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+              <button class="btn btn-primary" type="submit">Send</button>
+              <p id="form-status" class="form-text mt-3" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <div class="col-lg-4">
+            <aside class="card contact-side reveal h-100" aria-label="Contact info" style="--d:.1s">
+              <div class="card-body">
+                <h3 class="card-title">Reach me</h3>
+                <p>Prefer email? Use your mail app:</p>
+                <a id="live-mailto" class="btn btn-outline-secondary" href="mailto:you@example.com">Open Email</a>
+                <ul class="list-unstyled mt-3">
+                  <li>📍 Chattogram, Bangladesh</li>
+                  <li>🕘 GMT+6</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container d-flex justify-content-between align-items-center">
+      <small>© <span id="year"></span> Muaz Muhammad. All rights reserved.</small>
+      <a class="top btn btn-sm btn-outline-secondary" href="#home" aria-label="Back to top">↑</a>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="project-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title fs-5" id="modal-title">Title</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="modal-desc">Description</p>
+        </div>
+        <div class="modal-footer">
+          <a id="modal-demo" class="btn btn-primary" href="#" target="_blank" rel="noreferrer">Live</a>
+          <a id="modal-code" class="btn btn-outline-secondary" href="#" target="_blank" rel="noreferrer">Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+     <div id="toast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+         <div class="d-flex">
+             <div class="toast-body">Opening your email app…</div>
+             <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+         </div>
+     </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

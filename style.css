@@ -1,0 +1,234 @@
+/* ============ 0) Custom variables & base styles ============ */
+:root,
+:root[data-bs-theme="light"] {
+  --brand: #6b4cff;
+  --brand-2: #008fff;
+  --bs-body-bg: #f0f2f5;
+  --bs-body-color: #0f172a;
+  --bs-secondary-color: #51607a;
+  --bs-border-color: #e5e7eb;
+  --card-bg: #ffffff;
+  --panel-bg: #f8f9fa;
+  --shadow: 0 10px 24px rgba(16, 24, 40, 0.08);
+}
+
+:root[data-bs-theme="dark"] {
+  --brand: #7c5cff;
+  --brand-2: #00d4ff;
+  --bs-body-bg: #0b0d12;
+  --bs-body-color: #e7ecf3;
+  --bs-secondary-color: #aab3c2;
+  --bs-border-color: #1f2937;
+  --card-bg: #121826;
+  --panel-bg: #0f131a;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Bootstrap component overrides */
+.btn-primary {
+  --bs-btn-bg: var(--brand);
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-bg: color-mix(in oklab, var(--brand), #fff 10%);
+  --bs-btn-hover-border-color: color-mix(in oklab, var(--brand), #fff 10%);
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--bs-body-color);
+  --bs-btn-border-color: var(--bs-border-color);
+}
+.btn-outline-secondary:hover {
+  background: color-mix(in oklab, var(--bs-body-color), transparent 90%);
+}
+
+.card {
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+.modal-content {
+   background-color: var(--panel-bg);
+}
+
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: clamp(56px, 8vw, 96px) 0;
+  position: relative;
+}
+.section-title {
+  margin-bottom: 18px;
+  font-size: 28px;
+}
+.lead {
+  max-width: 54ch;
+}
+.gradient {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* ============ 1) Skip link ============ */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -48px;
+  background: var(--brand);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: top 0.2s;
+  z-index: 9999;
+}
+.skip-link:focus {
+  top: 8px;
+}
+
+/* ============ 2) Navbar ============ */
+.glassy-nav {
+  backdrop-filter: blur(10px);
+  background: color-mix(in oklab, var(--bs-body-bg), transparent 70%);
+  border-bottom: 1px solid var(--bs-border-color);
+}
+.logo {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff;
+  font-weight: 800;
+}
+.navbar-toggler {
+  border: 1px solid var(--bs-border-color);
+  padding: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem color-mix(in oklab, var(--brand), transparent 70%);
+}
+.navbar-toggler span {
+  width: 22px;
+  height: 2px;
+  background: var(--bs-body-color);
+  border-radius: 2px;
+}
+.nav-link.active {
+  color: var(--brand) !important;
+}
+.theme-toggle {
+    font-size: 18px;
+    padding: 4px 8px;
+}
+
+/* ============ 3) Home ============ */
+.home {
+  overflow: clip;
+}
+.hero-title {
+  font-size: clamp(30px, 6vw, 48px);
+  line-height: 1.15;
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: white;
+  background: radial-gradient(120px 120px at 10% 10%, var(--brand), var(--brand-2));
+}
+.pills, .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.badge, .tag {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--brand), transparent 85%);
+  border: 1px solid var(--bs-border-color);
+  font-weight: normal;
+  color: var(--bs-body-color);
+}
+
+.bg-blob {
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 70vh;
+  background: conic-gradient(from 180deg at 50% 50%, color-mix(in oklab, var(--brand), transparent 35%), color-mix(in oklab, var(--brand-2), transparent 35%), transparent);
+  filter: blur(60px) saturate(120%);
+  opacity: 0.35;
+  animation: float 24s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+@keyframes float {
+  to { transform: rotate(360deg); }
+}
+
+/* ============ 4/5) Cards, Projects, About ============ */
+.checklist {
+  padding-left: 18px;
+}
+.checklist li {
+  margin: 8px 0;
+}
+.chip {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  color: var(--bs-secondary-color);
+}
+.chip.active {
+  background: var(--brand-2);
+  color: #fff;
+}
+.project.hidden {
+  display: none;
+}
+.thumb {
+  height: 120px;
+  border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
+  background: linear-gradient(135deg, color-mix(in oklab, var(--brand), transparent 60%), color-mix(in oklab, var(--brand-2), transparent 70%));
+  border-bottom: 1px solid var(--bs-border-color);
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.card-footer {
+   background: transparent;
+}
+
+/* ============ 6) Contact ============ */
+.hp {
+  position: absolute;
+  left: -9999px;
+}
+
+/* ============ 7) Misc ============ */
+.footer {
+  border-top: 1px solid var(--bs-border-color);
+  padding: 18px 0;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s var(--d, 0s), transform 0.6s var(--d, 0s);
+}
+.reveal.on {
+  opacity: 1;
+  transform: none;
+}
